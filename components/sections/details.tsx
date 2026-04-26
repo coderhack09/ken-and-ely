@@ -40,10 +40,10 @@ export function Details() {
   const [rotationOffset, setRotationOffset] = useState(0)
   
   const coupleImages = [
-    "/mobile-background/couple (1).webp",
-    "/mobile-background/couple (2).webp",
-    "/mobile-background/couple (3).webp",
-    "/mobile-background/couple (4).webp",
+    "/frontboxes/newBox (1).webp",
+    "/frontboxes/newBox (2).webp",
+    "/frontboxes/newBox (3).webp",
+    "/mobile-background/img (2).webp",
   ]
 
   const receptionImages = siteConfig.reception.image

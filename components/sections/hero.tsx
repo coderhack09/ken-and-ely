@@ -7,19 +7,19 @@ import { siteConfig } from "@/content/site"
 import { getCloudinaryUrl } from "@/lib/cloudinary"
 
 const desktopImages: string[] = [
-  '/desktop-background/couple (1).webp',
-  '/desktop-background/couple (2).webp',
-  '/desktop-background/couple (3).webp',
-  '/desktop-background/couple (4).webp',
-  '/desktop-background/couple (6).webp',
+  '/desktop-background/img (1).webp',
+  '/desktop-background/img (2).webp',
+  '/desktop-background/img (3).webp',
+  '/desktop-background/img (4).webp',
+  '/desktop-background/img (5).webp',
 ].map((src) => getCloudinaryUrl(src, { width: 1920, quality: "auto" }))
 
 const mobileImages: string[] = [
-'/mobile-background/couple (1).webp',
-  '/mobile-background/couple (2).webp',
-  '/mobile-background/couple (3).webp',
-  '/mobile-background/couple (4).webp',
-  '/mobile-background/couple (6).webp'
+'/mobile-background/img (1).webp',
+  '/mobile-background/img (2).webp',
+  '/mobile-background/img (3).webp',
+  '/mobile-background/img (4).webp',
+  '/mobile-background/img (5).webp'
 ].map((src) => getCloudinaryUrl(src, { width: 768, quality: "auto" }))
 
 const SHOW_BUTTERFLIES = false
@@ -482,13 +482,13 @@ export function Hero() {
             }}
           >
             <span className="block text-left text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] drop-shadow-2xl">
-              {siteConfig.couple.groomNickname}
+              {siteConfig.couple.brideNickname}
             </span>
             <span className="block text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl py-1 sm:py-2 opacity-80">
               +
             </span>
             <span className="block text-right text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] drop-shadow-2xl">
-              {siteConfig.couple.brideNickname}
+              {siteConfig.couple.groomNickname}
             </span>
           </div>
 

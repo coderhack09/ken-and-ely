@@ -49,12 +49,11 @@ export function Registry() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
   {/* GCASH QR toggle */}
-  <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 mb-6 sm:mb-8">
+  {/* <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 mb-6 sm:mb-8">
         <h3 className={`${cinzel.className} text-xl sm:text-2xl md:text-3xl font-normal text-motif-cream text-center mb-4 sm:mb-6`}>
           GCASH
         </h3>
         <div className="flex flex-col items-center gap-4 sm:gap-6">
-          {/* Toggle buttons */}
           <div className="inline-flex rounded-lg border border-motif-cream/40 bg-motif-cream/5 p-1">
             {GCASH_QR.map((item) => (
               <button
@@ -71,7 +70,6 @@ export function Registry() {
               </button>
             ))}
           </div>
-          {/* Active QR image */}
           <div className="flex flex-col items-center">
             <div className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-xl overflow-hidden bg-white shadow-lg">
             <CloudinaryImage
@@ -92,7 +90,7 @@ export function Registry() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center">

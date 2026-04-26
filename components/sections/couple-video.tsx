@@ -188,7 +188,7 @@ export function CoupleVideo() {
                     onClick={handleThumbnailClick}
                   >
                     <CloudinaryImage
-                      src="/mobile-background/couple (3).webp"
+                      src="/mobile-background/img (2).webp"
                       alt="Video thumbnail"
                       fill
                       className="object-cover scale-100 group-hover:scale-105 transition-transform duration-700"

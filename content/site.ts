@@ -1,9 +1,9 @@
 export const siteConfig = {
   couple: {
     bride: "Arra Rauvel P. Villarin", //Noenyl Bryle M. Gonzaga
-    brideNickname: "Arra Rauvel", //Ltryl
+    brideNickname: "Arra", //Ltryl
     groom: "Robert John O. Cosico", //Ltryl B. Benitez
-    groomNickname: "Robert",
+    groomNickname: "RJ",
     monogram:"/monogram/monogram.png" ,//Ltryl
     backgroundMusic:"/background_music/Ezra Band - Runaway with lyrics.mp3"
   },

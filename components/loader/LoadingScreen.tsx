@@ -11,13 +11,13 @@ interface LoadingScreenProps {
 
 // Countdown boxes with color photos - numbers show days, hours, minutes
 const COUNTDOWN_BOXES = [
-  { src: '/frontboxes/box_1.JPG' },
-  { src: '/frontboxes/box_2.JPG' },
-  { src: '/frontboxes/box_3.JPG' }
+  { src: '/frontboxes/newBox (3).webp' },
+  { src: '/frontboxes/newBox (2).webp' },
+  { src: '/frontboxes/newBox (1).webp' }
 ];
 
-const MAIN_BW_IMAGE = '/frontboxes/phone.JPG';
-const DESKTOP_BW_IMAGE = '/frontboxes/desktop.JPG';
+const MAIN_BW_IMAGE = '/frontboxes/phoneView.webp';
+const DESKTOP_BW_IMAGE = '/frontboxes/desktopView.webp';
 const STAGGER_DELAY_MS = 4000; // Each image appears every 4 seconds
 const BOX_TRANSITION_MS = 1200; // Slow, smooth transition
 const TOTAL_DURATION_MS = COUNTDOWN_BOXES.length * STAGGER_DELAY_MS + 3000;
