@@ -1,93 +1,95 @@
 export const siteConfig = {
   couple: {
-    bride: "Arra Rauvel P. Villarin", //Noenyl Bryle M. Gonzaga
-    brideNickname: "Arra", //Ltryl
-    groom: "Robert John O. Cosico", //Ltryl B. Benitez
-    groomNickname: "RJ",
-    monogram:"/monogram/monogram.png" ,//Ltryl
+    bride: "Elyzha Louise S. David", //Noenyl Bryle M. Gonzaga
+    brideNickname: "Ely", //Ltryl
+    groom: "Kenneth Jun J. Cajayon", //Ltryl B. Benitez
+    groomNickname: "Ken",
+    monogram:"/monogram/monogramnew.png" ,//Ltryl
     backgroundMusic:"/background_music/Ezra Band - Runaway with lyrics.mp3"
   },
   googleAPI:{
-    messageForm: "https://docs.google.com/forms/d/e/1FAIpQLSeDhmUg1hwgBeD4pBnnqOvrd9Qn21nKCFkaX1RvmuEJM-zXUA/formResponse", //done
-    message: "https://script.google.com/macros/s/AKfycbxbhwAZ2eolYTCTGkHsZLEfKWZXQJjAy4eLJe-BcXc5pq7jSJ9O21SGCYaTO_kIltI6/exec", //done
-    guestList: "https://script.google.com/macros/s/AKfycbz9ZmqEuq4vBzgK4KyvTAA_G10pqAUtZFqTquqPycYVRvgJrEe1LIiuccWWIOE3moNB/exec", //done
-    guestRequest: "https://script.google.com/macros/s/AKfycbzeXiT1v6SqhbHzLtshOaeE9o8kMr-yOxz2IDrWusOrYdlWmgGnLTxC1pb5y4hDMNTy/exec", //done
-    entourage: "https://script.google.com/macros/s/AKfycbw51jnEcZi0o70H8G0EwBIpyqMTCHkisaNXZAV5Rooat3jdtDAysBB7nnssXw_ViWuD/exec", //done
-    sponsors: "https://script.google.com/macros/s/AKfycbxPws30pK7Rc8dUcv75WLKjNu9KnRBhj9sTXv3o-lsJC6Aa_4ZgI1Ae9R2uc5D11GiA/exec", //dsone
-    weddingDetails: "https://script.google.com/macros/s/AKfycbwtiqKL7zxzUYysEBFxclgU-iA0liAyvpaLl3Uf2r6W1t8QVoBc6daM0i50_7HpPNGS/exec", //done
+    messageForm: "https://docs.google.com/forms/d/e/1FAIpQLSehIpExxfuucYuZu7qCSTNPnHT_EcPbFgMPonCW9QfdCq4pQA/formResponse", //done
+    message: "https://script.google.com/macros/s/AKfycbx6NNrvPQMs7gIibTCOez7wy0iF3scLku8jum2xn25wNNYvp6s9a2XKY7GYCNzV1udB/exec", //done
+    guestList: "https://script.google.com/macros/s/AKfycbxyEFZp51ZdkjlltvNaefS8iUaKRAywtd4UjvihOsQJjWg9dVPNqaxeDSbfZy3DrX6Z/exec", //done
+    guestRequest: "https://script.google.com/macros/s/AKfycbw3nP62AaHOnQk727N7soXdR6ykYTX1KHNhXts0b2B3ceuottJNJ9i6CgOvqStj0V8Y/exec", //done
+    entourage: "https://script.google.com/macros/s/AKfycby-DB5BbNh4luhVx_RldROSHgDYdeui1h39bkkc1CJ3_VYtULX-3B0cLHZtc2IJj9GG/exec", //done
+    sponsors: "https://script.google.com/macros/s/AKfycbyX7ym2zphTllOUvkShfC8Y179lGTRr0oEb8WpR2NURI3BUo4swe_1oc8ptZ7rmdxcp/exec", //done
+    weddingDetails: "https://script.google.com/macros/s/AKfycbzmMfQg6dkFIa_tc8hAlXddWa9G7xxqJd3ZR8e502gtJhzLtWTVEf-FY5i_MFZSm2OT/exec", //done
 ////google share 
-    googleShare: "https://docs.google.com/spreadsheets/d/1nQaghVTASokBobVFNJ-BU6YfJvkPreop50HSgQxFxYU/edit?usp=sharing", //done
+    googleShare: "https://drive.google.com/drive/folders/1Fzv_NcPx_TvPdpU5iHsfUXOd4-QwtdnQ?usp=sharing", 
   },
   wedding: {
-    date: "July 11, 2026",
-    time: "10:00 AM",
-    venue: "St. John Bosco Parish Church",
+    date: "November 29, 2026",
+    time: "3:00 PM",
+    venue: "San Agustin Church",
     tagline: "are getting married!",
     theme: "Our wedding palette is inspired by timeless elegance and warmth.Motif Colors: Champagne Gold, Soft Beige, Warm Soft Brown",
     motif: "#BBCED5, #B9C3A8, #F3D8C5, #D1C4D4, #ECD8BA, #F4E8D8, #E1DCCF",
   },
   details: {
     rsvp: {
-      deadline: "June 10, 2026.",
-      contact: "Arra Rauvel P. Villarin",
+      deadline: "October 29, 2026.",
+      contact: "Elyzha Louise S. David",
       phone: "to be announced",
     },
   },
   giftRegistry: {
     QR_1:{
-    id: "Gcash",
-    src: "/QR/pleaseProvideQR.png",
-    label: "Gcash",
-    accountNumber: "Gcash: please provide QR",
+    id: "BPI",
+    src: "/QR/Gcash2.png",
+    label: "BPI",
+    accountNumber: "Elyzha Louise S. David",
     },
     QR_2:{
-    id: "Landbank",
-    src: "/QR/pleaseProvideQR.png",
-    label: "Landbank",
-    accountNumber: "Landbank: please provide QR",
+    id: "Gcash",
+    src: "/QR/Gcash.png",
+    label: "Gcash",
+    accountNumber: "Kenneth Jun J. Cajayon",
     }
   },
   ceremony: {
-    location: "St. John Bosco Parish Church",
-    venue: "Antonio Arnaiz Avenue, corner Amorsolo Street, Makati City, 1200 Metro Manila",
-    map: "https://maps.app.goo.gl/a3UyxxuGzoU8aAuSA",
-    date: "July 11, 2026",
-    day: "Saturday",
-    time: "10:00 AM",
-    entourageTime: "9:00 AM",
-    guestsTime: "9:30 AM",
-    image: "/Details/ceremony.webp",
+    location: "San Agustin Church",
+    venue: "General Luna St. Intramuros, Manila",
+    map: "https://maps.app.goo.gl/auFcNBZJvBCh6RZj9",
+    date: "November 29, 2026",
+    day: "Sunday",
+    time: "3:00 PM",
+    entourageTime: "2:00 PM",
+    guestsTime: "2:30 PM",
+    image: "/Details/Church.png",
   },
   reception: {
-    location: "Diamond Hotel Philippines",
-    venue: "Roxas Boulevard, Corner Dr. J. Quintos Street, Manila, 1000 Metro Manila",
-    date: "July 11, 2026",
-    time: "12:00 NN",
-    image: ["/Details/reception.webp","/Details/reception2.webp","/Details/reception3.webp"],
-  },                          
+    location: "Palacio De Manila",
+    venue: "1809 Del Pilar St. Malate Manila",
+    map: "https://maps.app.goo.gl/befpHeDXyTpy72CZ8",
+    date: "November 29, 2026",
+    day: "Sunday",
+    time: "6:00 PM",
+    image: ["/Details/reception.png","/Details/reception1.png","/Details/reception2.png"],
+  },
   dressCode: {
       theme: "SEMI-FORMAL",
     colors: "#BBCED5, #B9C3A8, #F3D8C5, #D1C4D4, #ECD8BA, #F4E8D8, #E1DCCF",
     sponsors: {
       male: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
       female: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
-      notes: "Ninong: Barong and Black Slacks\n Ninang: Pilipiniana Inspired Gown",
+      notes: "Your Presence will make our day even more special \n Ninong: Formal Wear : Charcoal Gray suid and Slacks, white long sleeves, and burgundy neckite \n Ninang: Long Dress / Formal Dress Burgundy Long Formal Dress.",
       photo: "/Details/sponsors.png",
-      palette: "#ECD8BA, #F4E8D8"
+      palette: "#777777, #78303A"
     },
     entourage: {
       gents: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
       ladies: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
-      notes: "You may glam up in theses shades.",
+      notes: "Your Presence will make our day even more special \n Ninong: Formal Wear : Charcoal Gray suid and Slacks, white long sleeves, and burgundy neckite \n Ninang: Long Dress / Formal Dress Burgundy Long Formal Dress.",
       photo: "/Details/entourage.png",
       palette: "#4B2E2B, #F7E7CE, #F5E6D3",
     },
     guests: {
       gents: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
       ladies: "Guests are kindly requested to wear attire in any of the shades within our wedding palette.Color pallet and image to be followed. STRICTLY no shorts, maong jeans, t-shirts, or slippers.",
-      notes: "You may glam up in theses shades.",
+      notes: "WE KINDLY ASK OUR GUEST TO WEAR THESE COLORS \n Gentlemen : Long sleeves / suit and slacks \n Ladies : Long Dress / Formal Dress",
       photo: "/Details/guest.png",
-      palette: "#6B3A0F, #4A1F05, #2B0F02, #D6B49A, #E8DCC3, #E6C28B, #E1DCCF",
+      palette: "#E4CBB1, #B4B1AB, #7F8873, #6380AD, #C39A74",
     },
     note: "We kindly request our guests to dress in attire following our wedding palette."
   },
@@ -120,7 +122,7 @@ Now, as they prepare to say yes before God and the people they love most, Cather
   },
   snapShare: {
     googleDriveLink: "https://drive.google.com/drive/folders/1XHy5EuSsvL3WFLFj0JrKRxElDvGR3yxb?usp=sharing",
-    hashtag: ["#ROBERTgotMesmARRAized","#heartROBERTforARRA"],
+    hashtag: ["#KENfinallysayIdotoELAY"],
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },
 }

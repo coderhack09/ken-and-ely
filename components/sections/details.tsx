@@ -4,7 +4,7 @@ import { Section } from "@/components/section"
 import { useState, useEffect } from "react"
 import { QRCodeSVG } from "qrcode.react"
 import { siteConfig } from "@/content/site"
-import { CloudinaryImage } from "@/components/ui/cloudinary-image"
+import Image from "next/image"
 import { Cinzel, Cormorant_Garamond } from "next/font/google"
 import {
   Shirt,
@@ -40,10 +40,10 @@ export function Details() {
   const [rotationOffset, setRotationOffset] = useState(0)
   
   const coupleImages = [
-    "/frontboxes/newBox (1).webp",
-    "/frontboxes/newBox (2).webp",
-    "/frontboxes/newBox (3).webp",
-    "/mobile-background/img (2).webp",
+    "/frontboxes/box (1).webp",
+    "/frontboxes/box (2).webp",
+    "/frontboxes/box (3).webp",
+    "/frontboxes/Phone.webp",
   ]
 
   const receptionImages = siteConfig.reception.image
@@ -130,7 +130,7 @@ export function Details() {
 
       {/* Flower decoration - top left corner */}
       <div className="absolute left-0 top-0 z-0 pointer-events-none">
-        <CloudinaryImage
+        <Image
           src="/decoration/flower-decoration-left-bottom-corner2.png"
           alt=""
           width={300}
@@ -143,7 +143,7 @@ export function Details() {
 
       {/* Flower decoration - top right corner */}
       <div className="absolute right-0 top-0 z-0 pointer-events-none">
-        <CloudinaryImage
+        <Image
           src="/decoration/flower-decoration-left-bottom-corner2.png"
           alt=""
           width={300}
@@ -156,7 +156,7 @@ export function Details() {
 
       {/* Flower decoration - left bottom corner */}
       <div className="absolute left-0 bottom-0 z-0 pointer-events-none">
-        <CloudinaryImage
+        <Image
           src="/decoration/flower-decoration-left-bottom-corner2.png"
           alt=""
           width={300}
@@ -169,7 +169,7 @@ export function Details() {
 
       {/* Flower decoration - right bottom corner */}
       <div className="absolute right-0 bottom-0 z-0 pointer-events-none">
-        <CloudinaryImage
+        <Image
           src="/decoration/flower-decoration-left-bottom-corner2.png"
           alt=""
           width={300}
@@ -216,7 +216,7 @@ export function Details() {
           <div className="relative bg-motif-cream rounded-xl sm:rounded-2xl overflow-hidden border border-motif-deep/20  shadow-[0_16px_40px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_48px_rgba(0,0,0,0.24)] hover:border-motif-deep/80 transition-all duration-300">
             {/* Venue Image */}
             <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[30rem] overflow-hidden">
-              <CloudinaryImage
+              <Image
                 src={siteConfig.ceremony.image}
                 alt={siteConfig.ceremony.location}
                 fill
@@ -357,7 +357,7 @@ export function Details() {
                     index === currentReceptionImageIndex ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <CloudinaryImage
+                  <Image
                     src={src}
                     alt={siteConfig.reception.venue}
                     fill
@@ -511,7 +511,7 @@ export function Details() {
 
               {/* Image */}
               <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30" style={{ width: 'calc(100% - 2rem)' }}>
-                <CloudinaryImage
+                <Image
                   src={siteConfig.dressCode.sponsors.photo}
                   alt="Principal sponsor attire"
                   fill
@@ -535,14 +535,34 @@ export function Details() {
               </div>
 
               {/* Notes — tagline + Gents / Ladies */}
-              <div className="px-4 sm:px-6 md:px-8 pb-5 sm:pb-7">
-                <div className="border-t border-motif-silver/60 pt-4 sm:pt-5">
-                  <p className="text-center text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-semibold text-motif-deep leading-relaxed ">
-                  Ninang - Champagne Satin Gown
-                  </p>
-                  <p className="text-center text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-semibold text-motif-deep leading-relaxed mb-3 sm:mb-4">
-                  Ninong- Barong Tagalog with Black Slacks
-                  </p>
+              <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6">
+                <div className="border-t border-motif-silver/60 pt-3 sm:pt-3.5">
+                  <div className="rounded-md sm:rounded-lg bg-gradient-to-br from-motif-deep/[0.1] via-motif-cream/45 to-motif-deep/[0.06] border border-motif-deep/20 px-3 py-2.5 sm:px-3.5 sm:py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
+                    <p className={`${cinzel.className} text-left text-[10px] sm:text-xs text-motif-deep font-semibold uppercase tracking-[0.22em] mb-1.5`}>
+                      Note
+                    </p>
+                    <p className={`${cormorant.className} text-left text-sm sm:text-base italic text-motif-deep leading-snug sm:leading-relaxed mb-2`}>
+                      Your presence will make our day even more special.
+                    </p>
+                    <div className="space-y-2 border-l-2 border-motif-deep/45 pl-2.5 sm:pl-3">
+                      <div>
+                        <p className={`${cinzel.className} text-left text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold text-motif-deep mb-0.5`}>
+                          Ninong
+                        </p>
+                        <p className={`${cormorant.className} text-motif-deep text-left text-sm sm:text-base leading-snug sm:leading-relaxed`}>
+                          Formal wear — charcoal gray suit and slacks, white long sleeves, and a burgundy necktie.
+                        </p>
+                      </div>
+                      <div>
+                        <p className={`${cinzel.className} text-left text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold text-motif-deep mb-0.5`}>
+                          Ninang
+                        </p>
+                        <p className={`${cormorant.className} text-motif-deep text-left text-sm sm:text-base leading-snug sm:leading-relaxed`}>
+                          Long / formal dress in burgundy.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -550,54 +570,6 @@ export function Details() {
 
           {/* ── Entourage & Secondary Sponsors ── */}
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
-            <div className="relative bg-motif-cream rounded-xl sm:rounded-2xl overflow-hidden border border-motif-deep/20 shadow-[0_16px_40px_rgba(0,0,0,0.14)] hover:shadow-[0_20px_48px_rgba(0,0,0,0.22)] hover:border-motif-deep/70 transition-all duration-300">
-
-              {/* Title */}
-              <div className="px-4 sm:px-6 md:px-8 pt-5 sm:pt-7 pb-4 sm:pb-5 text-center">
-                <h4 className={`${cinzel.className} text-base sm:text-lg md:text-xl lg:text-2xl text-motif-deep uppercase tracking-[0.22em] font-semibold leading-tight`}>
-                  Entourage &amp; Secondary Sponsors
-                </h4>
-              </div>
-
-              {/* Image */}
-              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30" style={{ width: 'calc(100% - 2rem)' }}>
-                <CloudinaryImage
-                  src={siteConfig.dressCode.entourage.photo}
-                  alt="Entourage attire"
-                  fill
-                  className="object-contain bg-[#FFF7F6]/50 p-2 sm:p-3"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
-                />
-              </div>
-
-              {/* Palette — directly below image */}
-              <div className="px-4 sm:px-6 md:px-8 pt-5 sm:pt-6 pb-4 sm:pb-5">
-                <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap">
-                  {siteConfig.dressCode.entourage.palette.split(',').map((color) => (
-                    <div
-                      key={color.trim()}
-                      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full ring-1 ring-gray-300/60 hover:scale-110 transition-transform duration-300"
-                      style={{ backgroundColor: color.trim() }}
-                      title={color.trim()}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Notes — tagline + Gents / Ladies */}
-              <div className="px-4 sm:px-6 md:px-8 pb-5 sm:pb-7">
-                <div className="border-t border-motif-silver/60 pt-4 sm:pt-5">
-                  <p className="text-center text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-semibold text-motif-deep leading-relaxed">
-                  Groomsmen - Barong Tagalog with Black Slacks
-                  </p>
-                  <p className="text-center text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-semibold text-motif-deep leading-relaxed mb-3 sm:mb-4">
-                  Bridesmaids - Choco Brown Dresses
-                  </p>
-                </div>
-            </div>
-          </div>
-
           {/* ── Guest Attire ── */}
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-br from-motif-silver/22 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
@@ -612,7 +584,7 @@ export function Details() {
 
               {/* Image */}
               <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-motif-medium/30" style={{ width: 'calc(100% - 2rem)' }}>
-                <CloudinaryImage
+                <Image
                   src={siteConfig.dressCode.guests.photo}
                   alt="Guest attire"
                   fill
@@ -636,12 +608,34 @@ export function Details() {
               </div>
 
               {/* Notes — tagline + Gents / Ladies */}
-              <div className="px-4 sm:px-6 md:px-8 pb-5 sm:pb-7">
-                <div className="border-t border-motif-silver/60 pt-4 sm:pt-5">
-                  <p className="text-center text-sm sm:text-base font-[family-name:var(--font-crimson)] font-semibold text-motif-deep leading-relaxed mb-3 sm:mb-4">
-                    We would like to see you in your best confortable attire that suits our color motif.
-                  </p>
-
+              <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6">
+                <div className="border-t border-motif-silver/60 pt-3 sm:pt-3.5">
+                  <div className="rounded-md sm:rounded-lg bg-gradient-to-br from-motif-deep/[0.1] via-motif-cream/45 to-motif-deep/[0.06] border border-motif-deep/20 px-3 py-2.5 sm:px-3.5 sm:py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
+                    <p className={`${cinzel.className} text-left text-[10px] sm:text-xs text-motif-deep font-semibold uppercase tracking-[0.22em] mb-1.5`}>
+                      Note
+                    </p>
+                    <p className={`${cormorant.className} text-left text-sm sm:text-base italic text-motif-deep leading-snug sm:leading-relaxed mb-2`}>
+                      We kindly ask our guests to wear the colors shown above.
+                    </p>
+                    <div className="space-y-2 border-l-2 border-motif-deep/45 pl-2.5 sm:pl-3">
+                      <div>
+                        <p className={`${cinzel.className} text-left text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold text-motif-deep mb-0.5`}>
+                          Gentlemen
+                        </p>
+                        <p className={`${cormorant.className} text-motif-deep text-left text-sm sm:text-base leading-snug sm:leading-relaxed`}>
+                          Long sleeves, suit, and slacks.
+                        </p>
+                      </div>
+                      <div>
+                        <p className={`${cinzel.className} text-left text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold text-motif-deep mb-0.5`}>
+                          Ladies
+                        </p>
+                        <p className={`${cormorant.className} text-motif-deep text-left text-sm sm:text-base leading-snug sm:leading-relaxed`}>
+                          Long or formal dress.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -655,7 +649,7 @@ export function Details() {
           </p>
           <ul className="space-y-2 sm:space-y-3 max-w-2xl mx-auto">
             {[
-              "Semi-Formal Attire",
+              "Formal Attire",
               "Ladies, we know you'd look beautiful in white — but let's save that for the bride.",
               "We kindly encourage everyone to avoid casual attire such as jeans, shorts, slippers, and sando.",
               "We also gently discourage wearing all or predominantly black outfits to match the bright and joyful mood of our celebration.",
@@ -694,7 +688,7 @@ export function Details() {
                       transform: `rotate(${currentRotation}deg) ${isActive ? 'scale(1.1)' : 'scale(1)'}`,
                     }}
                   >
-                    <CloudinaryImage
+                    <Image
                       src={image}
                       alt={`Wedding couple ${index + 1}`}
                       fill
@@ -821,7 +815,7 @@ export function Details() {
               {/* Shimmer effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0" />
 
-              <CloudinaryImage
+              <Image
                 src={showImageModal === "ceremony" ? "/Details/ceremony&location.jpg" : "/Details/Kayama Mountain Resort And Events Place, Sitio Kaytuyang, Brgy. Aga Nasugbu, Batangas.png"}
                 alt={showImageModal === "ceremony" ? ceremonyLocationFormatted : receptionLocationFormatted}
                 fill

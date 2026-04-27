@@ -90,8 +90,8 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
         isScrolled
-          ? "bg-motif-accent backdrop-blur-xl shadow-[0_10px_40px_rgba(91,102,85,0.35)] border-b border-motif-medium/70"
-          : "bg-motif-accent/92 backdrop-blur-lg border-b border-motif-medium/60"
+          ? "bg-motif-deep backdrop-blur-xl shadow-[0_10px_40px_rgba(91,102,85,0.35)] border-b border-motif-medium/70"
+          : "bg-motif-deep/92 backdrop-blur-lg border-b border-motif-medium/60"
       }`}
     >
       {/* Elegant glow effect when scrolled */}
@@ -161,11 +161,15 @@ export function Navbar() {
                 items={menuItems}
                 socialItems={[]}
                 displaySocials={false}
-                displayItemNumbering={true}
                 menuButtonColor="var(--color-motif-cream)"
-                openMenuButtonColor="var(--color-motif-deep)"
+                openMenuButtonColor="var(--color-motif-cream)"
                 changeMenuColorOnOpen={true}
-                colors={["var(--color-motif-deep)", "var(--color-motif-deep)", "var(--color-motif-deep)", "var(--color-motif-cream)", "var(--color-motif-cream)"]}
+                colors={[
+                  "var(--color-motif-deep)",
+                  "var(--color-motif-deep)",
+                  "var(--color-motif-deep)",
+                  "var(--color-motif-deep)",
+                ]}
                 accentColor="var(--color-motif-soft)"
                 isFixed={true}
                 onMenuOpen={() => {}}

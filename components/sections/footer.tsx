@@ -43,8 +43,8 @@ export function Footer() {
   const ceremonyDate = siteConfig.ceremony.date
   const ceremonyTime = siteConfig.ceremony.time
   const receptionTime = siteConfig.reception.time
-  const ceremonyVenue = siteConfig.ceremony.venue
-  const receptionVenue = siteConfig.reception.venue
+  const ceremonyVenue = siteConfig.ceremony.location
+  const receptionVenue = siteConfig.reception.location
   // Combined venue when same for both (e.g. Altamers Mountain Resort)
   const isSameVenue = ceremonyVenue === receptionVenue
   const combinedVenue = isSameVenue ? ceremonyVenue : null

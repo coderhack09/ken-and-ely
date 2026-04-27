@@ -35,19 +35,19 @@ const hex = {
 
 
 const desktopImages: string[] = [
-  '/desktop-background/img (1).webp',
-  '/desktop-background/img (2).webp',
-  '/desktop-background/img (3).webp',
-  '/desktop-background/img (4).webp',
-  '/desktop-background/img (5).webp',
+  '/desktop-background/couple (1).webp',
+  '/desktop-background/couple (2).webp',
+  '/desktop-background/couple (3).webp',
+  '/desktop-background/couple (4).webp',
+  '/desktop-background/couple (5).webp',
 ];
 
 const mobileImages: string[] = [
-'/mobile-background/img (1).webp',
-  '/mobile-background/img (2).webp',
-  '/mobile-background/img (3).webp',
-  '/mobile-background/img (4).webp',
-  '/mobile-background/img (5).webp'
+'/mobile-background/couple (10).webp',
+  '/mobile-background/couple (9).webp',
+  '/mobile-background/couple (20).webp',
+  '/mobile-background/couple (17).webp',
+  '/mobile-background/couple (5).webp'
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
@@ -148,9 +148,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
           style={{
             background: `linear-gradient(
               to top,
-              rgba(${hex.cream}, 0.72) 0%,
-              rgba(${hex.soft}, 0.38) 30%,
-              rgba(${hex.accent}, 0.10) 55%,
+              rgba(${hex.deep}, 0.72) 0%,
+              rgba(${hex.medium}, 0.38) 30%,
+              rgba(${hex.deep}, 0.10) 55%,
               transparent 70%
             )`
           }}
@@ -241,9 +241,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
               contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              backgroundColor: palette.cream,   // champagne gold
+              backgroundColor: palette.deep,   // champagne gold
               borderColor: palette.medium,        // classic beige border
-              color: palette.deep,                // warm brown text
+              color: palette.cream,                // warm brown text
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = palette.soft;
@@ -257,7 +257,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             }}
           >
             <span
-              style={{ fontFamily: '"Cinzel", serif', fontWeight: 500, color: palette.deep, letterSpacing: '0.18em' }}
+              style={{ fontFamily: '"Cinzel", serif', fontWeight: 500, color: palette.cream, letterSpacing: '0.18em' }}
             >
               Open Invitation
             </span>

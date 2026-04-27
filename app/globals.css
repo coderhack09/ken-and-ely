@@ -88,12 +88,12 @@
   --font-serif: "Great Vibes", "Great Vibes Fallback";
 
   /* ─── Motif palette — edit here, affects every component ─── */
-  --color-motif-deep:    #8C6B4F;  /* deep champagne brown - headings */
-  --color-motif-medium:  #BFA38A;  /* champagne taupe - body text */
-  --color-motif-accent:  #D4B48C;  /* soft gold - buttons / highlights */
-  --color-motif-cream:   #FAF7F2;  /* warm white - background */
-  --color-motif-soft:    #EDE3D6;  /* light champagne - sections/cards */
-  --color-motif-silver:  #D9D9D9;  /* soft silver - borders/dividers */  /* subtle neutral divider */ /* neutral divider */
+  --color-motif-deep:    #78303A;  /* deep wine - primary identity / headings */
+  --color-motif-medium:  #5F5F5F;  /* refined neutral gray - body text */
+  --color-motif-accent:  #808874;  /* sage/olive - accents & secondary highlights */
+  --color-motif-cream:   #F0E4CC;  /* warm cream - background */
+  --color-motif-soft:    #E6D6B8;  /* soft beige - sections/cards */
+  --color-motif-silver:  #D9D9D9;  /* light neutral - borders/dividers */ /* soft silver - borders/dividers */  /* subtle neutral divider */ /* neutral divider */
   /* ─────────────────────────────────────────────────────────── */
   --font-imperial-script: "Imperial Script", cursive;
   --color-background: var(--background);

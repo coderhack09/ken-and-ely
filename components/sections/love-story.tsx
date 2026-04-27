@@ -24,9 +24,9 @@ export function LoveStory() {
         <h1 className={`${cinzel.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl uppercase tracking-[0.14em] sm:tracking-[0.18em] font-normal leading-tight text-motif-deep mt-8`}>
         Love Story
         </h1>
-        <p className={`${cinzel.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-[0.14em] sm:tracking-[0.18em] font-normal leading-tight text-motif-medium mb-1`}>
+        {/* <p className={`${cinzel.className} text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-[0.14em] sm:tracking-[0.18em] font-normal leading-tight text-motif-medium mb-1`}>
         From Paper to Forever
-        </p>
+        </p> */}
       </div>
 
       {/* SECTION 1: Top - Dark */}
@@ -34,12 +34,14 @@ export function LoveStory() {
         theme="light"
         layout="image-left"
         isFirst={true}
-        // title="The Unexpected Beginning"
-        imageSrc="/mobile-background/img (5).webp"
+        title="From Secret Glances to Forever Vows"
+        imageSrc="/frontboxes/box (1).webp"
         text={
           <>
             <p className="mb-4">
-            By God’s grace, our story began with a simple meeting at Metrobank during a BOTP-NAC training—an ordinary encounter that would one day lead us here.
+            Many people ask us when, where, and how our story truly began. Some say it was fate, others
+say it was algorithms. For us, it was a simple moment. One we didn’t think much of at the time,
+but one that quietly changed everything.
             </p>
            
           </>
@@ -50,12 +52,16 @@ export function LoveStory() {
       <StorySection
         theme="dark"
         layout="image-right"
-        imageSrc="/mobile-background/img (4).webp"
-        // title="Clueless but Thriving"
+        imageSrc="/desktop-background/couple (3).webp"
+        title="March 8, 2019 — Perfectly Matched"
         text={
           <>
             <p>
-            From classmates, we became text mates. What started with lighthearted exchanges after a night of laughter with friends, and a quiet gesture of him bringing me back to my apartment the next day, became the gentle beginning of something deeper.
+            It started with a single swipe. Mutual, effortless, and seemingly ordinary. But looking back now,
+that moment was anything but ordinary. We didn’t just find a match. We found someone who
+understood our humor, shared our perspective, and felt familiar in a way we couldn’t quite
+explain. Even before we truly got to know each other, there was already a quiet sense that this
+connection was worth exploring.
             </p>
           </>
         }
@@ -66,13 +72,17 @@ export function LoveStory() {
         theme="light"
         layout="image-left"
         isLast={true}
-        imageSrc="/mobile-background/img (1).webp"
-        // title="Just Work… or So They Say"
+        imageSrc="/LoveStory/April 18, 2019 — Our First Conversation.webp"
+        title="April 18, 2019 — Our First Conversation"
         text={
           <>
             <p>
-            In time came meaningful conversations, shared dates, and a love that steadily grew. Though we are different in personality, humor, and lifestyle, we learned that love is not about having no differences, but about choosing to meet halfway, extending grace, and holding on to one another through every season.
-            </p>
+            What began as a simple “hey” quickly turned into hours of conversation. We remember how
+easy it was to keep talking about anything and everything. What we thought would be a short
+exchange became something we looked forward to every day. Without realizing it, we were
+already becoming part of each other’s routine, sharing pieces of our lives one conversation at a
+time.
+           </p>
            
           </>
         }
@@ -81,12 +91,16 @@ export function LoveStory() {
             <StorySection
         theme="dark"
         layout="image-right"
-        imageSrc="/mobile-background/img (3).webp"
-        // title="The Chocolate Move"
+        imageSrc="/LoveStory/May 3, 2019 — Our First Date.webp"
+        title="May 3, 2019 — Our First Date"
         text={
           <>
             <p>
-            Ours is not a story of perfect love, but of faithful love—one shaped by commitment, strengthened by understanding, and guided by God’s hand from the very beginning. And now, the two of us who once met in a training room are being led to the altar, ready to begin a lifetime of love, devotion, and forever.
+            Meeting in person came with a mix of excitement and nerves. We both wondered if the
+connection we felt would be the same in real life and it was. From the first moments,
+everything felt natural. There were a few awkward pauses, a lot of laughter, and a quiet
+realization that this was something real. That day became the beginning of something we both
+chose to hold on to.
             </p>
           </>
         }
@@ -97,16 +111,109 @@ export function LoveStory() {
         theme="light"
         layout="image-left"
         isLast={true}
-        imageSrc="/frontboxes/newBox (2).webp"
-        // title="Sabay-Uwi Chronicles"
+        imageSrc="/LoveStory/June 2019 — Our First Trip Together.webp"
+        title="June 2019 — Our First Trip Together"
         text={
           <>
             <p>
-            To this moment.
-            <br />
-To this promise. 
+            Soon after, we traveled together for the first time. It wasn’t just about the place. It was about
+learning how to be with each other in new situations. We navigated unfamiliar roads, made
+small decisions together, and experienced both the easy and challenging moments side by side.
+Somewhere along the way, we realized that no matter where we were, what mattered most
+was that we were together.
+            </p>
+           
+          </>      
+        }
+      />
+                  {/* SECTION 6: Middle - Light */}
+                  <StorySection
+        theme="dark"
+        layout="image-right"
+        imageSrc="/LoveStory/The Years That Followed 2 Concerts together.webp"
+        title="July 30, 2019 — Our First “Yes”"
+        text={
+          <>
+            <p>
+            On this day, we made it official. With a simple “yes,” we chose each other not just for that
+moment, but for everything that would come after. It was the start of our relationship as
+partners, built on trust, respect, and the decision to grow together.
+            </p>
+          </>
+        }
+      />
+
+      {/* SECTION 7: Bottom - Dark */}
+      <StorySection
+        theme="light"
+        layout="image-left"
+        isLast={true}
+        imageSrc="/LoveStory/The Years That Followed 1.webp"
+        title="The Years That Followed"
+        text={
+          <>
+            <p>
+            The years that followed were filled with moments. Some big, some small, all meaningful. We
+went to concerts, traveled to new places, got lost more than a few times, and learned how to
 <br />
-To a lifetime of choosing each other, every single day.
+<br />
+navigate life together. We celebrated each other’s wins, supported each other through
+challenges, and slowly built a life that felt like home.
+<br />
+<br />
+We learned that love isn’t just about the highlights. It’s in the everyday moments. The
+conversations at the end of a long day, the small acts of care, the patience, the understanding,
+and even the disagreements that taught us how to listen and grow. Through it all, we kept
+choosing each other.
+            </p>
+           
+          </>      
+        }
+      />
+                  {/* SECTION 8: Middle - Light */}
+                  <StorySection
+        theme="dark"
+        layout="image-right"
+        imageSrc="/LoveStory/March 2, 2025 — Our Sixth Year Together.webp"
+        title="March 2, 2025 — Our Sixth Year Together"
+        text={
+          <>
+            <p>
+            On our sixth year together, we found ourselves in Austria, standing in front of the Alps taking in
+how far we had come. In that moment, everything felt still and certain. And then, we took the
+next step.
+<br />
+<br />
+We got engaged.
+
+            </p>
+          </>
+        }
+      />
+
+      {/* SECTION 9: Bottom - Dark */}
+      <StorySection
+        theme="light"
+        layout="image-left"
+        isLast={true}
+        imageSrc="/desktop-background/couple (13).webp"
+        // title="June 2019 — Our First Trip Together"
+        text={
+          <>
+            <p>
+With full hearts and a quiet sense of certainty, we made a promise not just for that day, but for
+the life we continue to build together.
+<br />
+And now… the finale becomes the beginning.
+<br />
+With teary eyes, happy hearts, and all our favorite people as witnesses,
+<br />
+We will say “I do” to every sunrise and storm, every laugh and silence, every messy day and
+magical night.
+<br />
+This isn’t just a wedding
+<br />
+It’s the start of our forever adventure.
             </p>
            
           </>      
