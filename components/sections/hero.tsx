@@ -4,19 +4,19 @@ import { useEffect, useState, useMemo } from "react"
 import { motion } from "motion/react"
 import { Cormorant_Garamond, Cinzel } from "next/font/google"
 import { siteConfig } from "@/content/site"
-import { getCloudinaryUrl } from "@/lib/cloudinary"
+import Image from "next/image"
 
-const desktopImages: string[] = [
-  '/desktop-background/couple (1).webp',
-  '/desktop-background/couple (2).webp',
-  '/desktop-background/couple (3).webp',
-  '/desktop-background/couple (4).webp',
-  '/desktop-background/couple (5).webp',
-].map((src) => getCloudinaryUrl(src, { width: 1920, quality: "auto" }))
+const desktopBackgroundSrcs: readonly string[] = [
+  "/desktop-background/couple (1).webp",
+  "/desktop-background/couple (2).webp",
+  "/desktop-background/couple (3).webp",
+  "/desktop-background/couple (4).webp",
+  "/desktop-background/couple (5).webp",
+]
 
-const mobileImages: string[] = [
-'/frontboxes/couple (20).jpg',
-].map((src) => getCloudinaryUrl(src, { width: 768, quality: "auto" }))
+const mobileBackgroundSrcs: readonly string[] = [
+  "/frontboxes/couple (20).jpg",
+]
 
 const SHOW_BUTTERFLIES = false
 
@@ -56,33 +56,34 @@ export function Hero() {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
-  // Get the appropriate image array based on screen size
-  const backgroundImages = useMemo(() => {
-    return isMobile ? mobileImages : desktopImages
-  }, [isMobile])
+  const backgroundImages = useMemo(
+    () => (isMobile ? [...mobileBackgroundSrcs] : [...desktopBackgroundSrcs]),
+    [isMobile],
+  )
 
   // Preload images progressively - show first image immediately
   useEffect(() => {
     setImagesLoaded(false)
     setCurrentImageIndex(0)
     
-    // Load first image with priority to show it immediately
-    const firstImg = new Image()
-    firstImg.src = backgroundImages[0]
-    firstImg.onload = () => {
-      setImagesLoaded(true) // Show first image immediately
-    }
-    
-    // Then preload a small lookahead set in background (avoid preloading all)
-    setTimeout(() => {
-      if (typeof navigator !== 'undefined' && (navigator as any).connection?.saveData) return
+    const firstSrc = backgroundImages[0]
+    if (!firstSrc) return
+
+    const firstImg = document.createElement("img")
+    firstImg.src = firstSrc
+    firstImg.onload = () => setImagesLoaded(true)
+
+    const t = setTimeout(() => {
+      if (typeof navigator !== "undefined" && (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData) return
       backgroundImages.slice(1, 3).forEach((src) => {
-        const img = new Image()
-        img.decoding = 'async'
-        img.loading = 'lazy' as any
+        const img = document.createElement("img")
+        img.decoding = "async"
+        img.loading = "lazy"
         img.src = src
       })
     }, 200)
+
+    return () => clearTimeout(t)
   }, [backgroundImages])
 
   useEffect(() => {
@@ -113,21 +114,26 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-motif-deep">
       <div className="absolute inset-0 w-full h-full">
-        {imagesLoaded && backgroundImages.map((image, index) => (
-          <div
-            key={image}
-            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-            style={{
-              backgroundImage: `url('${image}')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              willChange: "opacity",
-            }}
-          />
-        ))}
+        {imagesLoaded &&
+          backgroundImages.map((src, index) => (
+            <div
+              key={src}
+              className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ willChange: "opacity" }}
+            >
+              <Image
+                src={src}
+                alt=""
+                fill
+                className="object-cover object-center"
+                sizes="100vw"
+                priority={index === 0}
+                quality={85}
+              />
+            </div>
+          ))}
         {/* Bottom vignette — lifts text without crushing the photo */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent z-0" />
         {/* Top vignette — subtle shadow for navbar readability */}
