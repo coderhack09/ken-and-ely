@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Cinzel, Cormorant_Garamond } from 'next/font/google'
 import { X } from 'lucide-react'
-import { CloudinaryImage } from '@/components/ui/cloudinary-image'
+import Image from 'next/image'
 
 import { TornPaperEdge } from './TornPaperEdge'
 
@@ -157,7 +157,7 @@ export const StorySection: React.FC<StorySectionProps> = ({
     'md:max-h-[min(82vh,48rem)] lg:max-h-[min(85vh,56rem)] xl:max-h-[min(88vh,60rem)]'
 
   const storyImage = (
-    <CloudinaryImage
+    <Image
       src={imageSrc}
       alt={title ? `Story: ${title}` : 'Story moment'}
       width={intrinsic.w}
@@ -282,7 +282,7 @@ export const StorySection: React.FC<StorySectionProps> = ({
             className="relative flex max-h-[min(92vh,900px)] w-full max-w-6xl items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <CloudinaryImage
+            <Image
               src={imageSrc}
               alt={title ? `Full size: ${title}` : 'Story moment full size'}
               width={intrinsic.w}
