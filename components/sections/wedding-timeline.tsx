@@ -45,14 +45,14 @@ interface TimelineEvent {
 }
 
 const timelineEvents: TimelineEvent[] = [
-  {
-    time: `${siteConfig.ceremony.entourageTime}`,
-    title: "Arrival",
-    // description: "Please arrive on time to find your seat, settle in, and get ready for the celebration.",
-    location: `${siteConfig.ceremony.location}`,
-    icon: GuestsIcon,
-    imageSrc: "/weddingtimeline/arrivalimage.png",
-  },  
+  // {
+  //   time: `${siteConfig.ceremony.entourageTime}`,
+  //   title: "Arrival",
+  //   // description: "Please arrive on time to find your seat, settle in, and get ready for the celebration.",
+  //   location: `${siteConfig.ceremony.location}`,
+  //   icon: GuestsIcon,
+  //   imageSrc: "/weddingtimeline/arrivalimage.png",
+  // },  
   {
     time: `${siteConfig.ceremony.time}`,
     title: "Wedding Ceremony",
@@ -86,7 +86,7 @@ const timelineEvents: TimelineEvent[] = [
     imageSrc: "/weddingtimeline/reception welcom.png",
   },
   {
-    time: "7:00 PM",
+    time: "7:30 PM",
     title: "Dinner Service",
     // description: "Share a relaxed meal together as we continue the celebration.",
     location: receptionVenue,
@@ -94,7 +94,7 @@ const timelineEvents: TimelineEvent[] = [
     imageSrc: "/weddingtimeline/DinnerService.png",
   },
   {
-    time: "8:00 PM",
+    time: "9:00 PM",
     title: "Party",
     // description: "Let's dance the night away and celebrate this new chapter!",
     location: receptionVenue,

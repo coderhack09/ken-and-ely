@@ -50,9 +50,9 @@ export function Registry() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
   {/* GCASH QR toggle */}
   <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 mb-6 sm:mb-8">
-        <h3 className={`${cinzel.className} text-xl sm:text-2xl md:text-3xl font-normal text-motif-cream text-center mb-4 sm:mb-6`}>
+        {/* <h3 className={`${cinzel.className} text-xl sm:text-2xl md:text-3xl font-normal text-motif-cream text-center mb-4 sm:mb-6`}>
           GCASH
-        </h3>
+        </h3> */}
         <div className="flex flex-col items-center gap-4 sm:gap-6">
           <div className="inline-flex rounded-lg border border-motif-cream/40 bg-motif-cream/5 p-1">
             {GCASH_QR.map((item) => (

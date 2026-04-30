@@ -47,11 +47,11 @@ const faqItems: FAQItem[] = [
     answer:
     `The ceremony and reception will be held at ${siteConfig.ceremony.location}, ${siteConfig.ceremony.venue}. You can find detailed directions, addresses, and maps in the Details Section above`
   },
-  {
-    question: "Is there an entourage call time?",
-    answer:
-    `Yes. We request our Principal Sponsors to arrive at ${siteConfig.ceremony.entourageTime} so we can prepapre and settle before the ceremony begins`
-  },
+  // {
+  //   question: "Is there an entourage call time?",
+  //   answer:
+  //   `Yes. We request our Principal Sponsors to arrive at ${siteConfig.ceremony.entourageTime} so we can prepapre and settle before the ceremony begins`
+  // },
   {
     question: "How do I RSVP?",
     answer:

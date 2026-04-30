@@ -28,7 +28,7 @@ export const siteConfig = {
   },
   details: {
     rsvp: {
-      deadline: "October 29, 2026.",
+      deadline: "October 14, 2026.",
       contact: "Elyzha Louise S. David",
       phone: "to be announced",
     },
