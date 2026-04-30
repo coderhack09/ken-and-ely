@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type ReactNode } from "react"
 import { ChevronDown } from "lucide-react"
 import { Section } from "@/components/section"
 import { CloudinaryImage } from "@/components/ui/cloudinary-image"
@@ -28,7 +28,7 @@ const palette = {
 
 interface FAQItem {
   question: string
-  answer: string
+  answer: string | ReactNode
 }
 
 const faqItems: FAQItem[] = [
@@ -54,8 +54,48 @@ const faqItems: FAQItem[] = [
   // },
   {
     question: "How do I RSVP?",
-    answer:
-    `Please RSVP through the RSVP section on this invitation. Simply search for your name in the guest list and confirm your attendance. Due Date of final RSVP is on ${siteConfig.details.rsvp.deadline}. For any questions, please contact ${siteConfig.details.rsvp.contact} via Messenger`
+    answer: (
+      <>
+        Please RSVP using the{" "}
+        <a
+          href="#guest-list"
+          className="underline font-bold transition-colors hover:opacity-80"
+          style={{ color: palette.softBrown }}
+          onClick={(e) => {
+            e.preventDefault()
+            document.getElementById("guest-list")?.scrollIntoView({ behavior: "smooth" })
+          }}
+        >
+          guest list
+        </a>{" "}
+        on this invitation: search for your name and confirm your attendance.
+        {"\n"}
+        Please respond by{" "}
+        {siteConfig.details.rsvp.deadline.replace(/\.\s*$/, "")}.
+        {"\n"}
+        If you have questions, message{" "}
+        <a
+          href="https://www.facebook.com/elyzha.david"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline font-bold transition-colors hover:opacity-80"
+          style={{ color: palette.softBrown }}
+        >
+          {siteConfig.details.rsvp.contact}
+        </a>{" "}
+        or{" "}
+        <a
+          href="https://www.facebook.com/KennethJunCajayon"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline font-bold transition-colors hover:opacity-80"
+          style={{ color: palette.softBrown }}
+        >
+          {siteConfig.couple.groom}
+        </a>{" "}
+        on Messenger.
+      </>
+    ),
   },
   {
     question: "Can I sit anywhere at the reception?",
@@ -242,7 +282,8 @@ export function FAQ() {
                           className="px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 border-t"
                           style={{ backgroundColor: 'color-mix(in srgb, var(--color-motif-cream) 90%, transparent)', borderColor: 'color-mix(in srgb, var(--color-motif-deep) 25%, transparent)' }}
                         >
-                          {item.answer.includes("[RSVP_LINK]") ? (
+                          {typeof item.answer === "string" &&
+                          item.answer.includes("[RSVP_LINK]") ? (
                             <p className={`${cormorant.className} font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line tracking-wide`} style={{ color: palette.deep }}>
                               {item.answer.split("[RSVP_LINK]")[0]}
                               <a

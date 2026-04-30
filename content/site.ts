@@ -1,11 +1,11 @@
 export const siteConfig = {
   couple: {
     bride: "Elyzha Louise S. David", //Noenyl Bryle M. Gonzaga
-    brideNickname: "Ely", //Ltryl
+    brideNickname: "Elay", //Ltryl
     groom: "Kenneth Jun J. Cajayon", //Ltryl B. Benitez
     groomNickname: "Ken",
-    monogram:"/monogram/monogramnew.png" ,//Ltryl
-    backgroundMusic:"/background_music/Ezra Band - Runaway with lyrics.mp3"
+    monogram:"/monogram/newmonogram.png" ,//Ltryl
+    backgroundMusic:"/background_music/WE & US - Moira Dela Torre (Halfway Point)  Lyric Video (mp3cut.net).mp3"
   },
   googleAPI:{
     messageForm: "https://docs.google.com/forms/d/e/1FAIpQLSehIpExxfuucYuZu7qCSTNPnHT_EcPbFgMPonCW9QfdCq4pQA/formResponse", //done
