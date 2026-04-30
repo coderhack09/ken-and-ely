@@ -13,7 +13,7 @@ interface LoadingScreenProps {
 const COUNTDOWN_BOXES = [
   { src: '/frontboxes/box (1).webp' },
   { src: '/frontboxes/box (2).webp' },
-  { src: '/frontboxes/box (3).webp' }
+  { src: '/frontboxes/Edited-19.jpg' }
 ];
 
 const MAIN_BW_IMAGE = '/frontboxes/Phone.webp';

@@ -18,15 +18,34 @@ const cinzel = Cinzel({
 })
 
 interface EntourageMember {
-  Name: string
-  RoleCategory: string
-  RoleTitle: string
-  Email: string
+  name: string
+  roleCategory: string
+  roleTitle: string
+  email: string
 }
 
 interface PrincipalSponsor {
-  MalePrincipalSponsor: string
-  FemalePrincipalSponsor: string
+  malePrincipalSponsor: string
+  femalePrincipalSponsor: string
+}
+
+/** Accepts PascalCase from API / Sheets or camelCase */
+function entourageMemberFromApi(row: Record<string, unknown>): EntourageMember {
+  const r = row as Record<string, string | undefined>
+  return {
+    name: r.name ?? r.Name ?? "",
+    roleCategory: r.roleCategory ?? r.RoleCategory ?? "",
+    roleTitle: r.roleTitle ?? r.RoleTitle ?? "",
+    email: r.email ?? r.Email ?? "",
+  }
+}
+
+function principalSponsorFromApi(row: Record<string, unknown>): PrincipalSponsor {
+  const r = row as Record<string, string | undefined>
+  return {
+    malePrincipalSponsor: r.malePrincipalSponsor ?? r.MalePrincipalSponsor ?? "",
+    femalePrincipalSponsor: r.femalePrincipalSponsor ?? r.FemalePrincipalSponsor ?? "",
+  }
 }
 
 // Colors sourced from globals.css @theme inline — edit there to update everywhere
@@ -63,7 +82,7 @@ function mapStaticEntourage(): EntourageMember[] {
     if (group === "christian-family") category = "Parents of the Groom"
     if (group === "candle") category = "Candle Sponsors"
     if (group === "cord") category = "Cord Sponsors"
-    return { Name: name, RoleTitle: role, RoleCategory: category, Email: "" }
+    return { name, roleTitle: role, roleCategory: category, email: "" }
   })
 }
 
@@ -71,8 +90,8 @@ function mapStaticSponsors(): PrincipalSponsor[] {
   return staticSponsors
     .filter((s) => s.name || s.spouse)
     .map(({ name, spouse }) => ({
-      MalePrincipalSponsor: name || "",
-      FemalePrincipalSponsor: spouse || "",
+      malePrincipalSponsor: name || "",
+      femalePrincipalSponsor: spouse || "",
     }))
 }
 
@@ -109,6 +128,15 @@ function normalizeRoleCategory(category: string): string {
   return normalized
 }
 
+/** Title case per word; uses Unicode letters so ñe → Ñe (not ñE from ASCII-only `/\b\w/g`). */
+function toTitleCaseDisplayName(name: string): string {
+  const lower = name.toLocaleLowerCase("es")
+  return lower.replace(
+    /(^|[\s'\-])(\p{L})/gu,
+    (_, sep: string, letter: string) => sep + letter.toLocaleUpperCase("es")
+  )
+}
+
 export function Entourage() {
   const [entourage, setEntourage] = useState<EntourageMember[]>([])
   const [sponsors, setSponsors] = useState<PrincipalSponsor[]>([])
@@ -123,8 +151,11 @@ export function Entourage() {
     try {
       const response = await fetch("/api/entourage", { cache: "no-store" })
       if (!response.ok) throw new Error("Failed to fetch entourage")
-      const data: EntourageMember[] = await response.json()
-      const list = Array.isArray(data) && data.length > 0 ? data : mapStaticEntourage()
+      const data: unknown = await response.json()
+      const list =
+        Array.isArray(data) && data.length > 0
+          ? data.map((row) => entourageMemberFromApi(row as Record<string, unknown>))
+          : mapStaticEntourage()
       setEntourage(list)
     } catch (err: unknown) {
       console.error("Failed to load entourage:", err)
@@ -139,10 +170,11 @@ export function Entourage() {
     try {
       const res = await fetch("/api/principal-sponsor", { cache: "no-store" })
       if (!res.ok) throw new Error("Failed to load principal sponsors")
-      const data: PrincipalSponsor[] = await res.json()
-      const list = Array.isArray(data) && data.length > 0
-        ? data.filter((s) => s.MalePrincipalSponsor || s.FemalePrincipalSponsor)
-        : mapStaticSponsors()
+      const data: unknown = await res.json()
+      const list =
+        Array.isArray(data) && data.length > 0
+          ? data.map((row) => principalSponsorFromApi(row as Record<string, unknown>)).filter((s) => s.malePrincipalSponsor || s.femalePrincipalSponsor)
+          : mapStaticSponsors()
       setSponsors(list)
     } catch (e: unknown) {
       console.error("Failed to load sponsors:", e)
@@ -196,7 +228,7 @@ export function Entourage() {
     const grouped: Record<string, EntourageMember[]> = {}
     
     entourage.forEach((member) => {
-      const category = normalizeRoleCategory(member.RoleCategory)
+      const category = normalizeRoleCategory(member.roleCategory)
 
       // Skip members without a category or in "Other"
       if (!category || category === "Other") {
@@ -262,14 +294,14 @@ export function Entourage() {
           className={`relative text-[10px] sm:text-[11.5px] md:text-[12.5px] lg:text-[13.5px] font-semibold ${textAlign} transition-all duration-300`}
           style={{ color: palette.deep }}
         >
-          {member.Name.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())}
+          {toTitleCaseDisplayName(member.name)}
         </p>
-        {showRole && member.RoleTitle && (
+        {showRole && member.roleTitle && (
           <p
             className={`relative text-[9px] sm:text-[10px] md:text-[10px] lg:text-xs font-medium mt-0 leading-tight ${textAlign} tracking-wide uppercase transition-colors duration-300 opacity-80`}
             style={{ color: palette.medium }}
           >
-            {member.RoleTitle}
+            {member.roleTitle}
           </p>
         )}
       </div>
@@ -465,8 +497,8 @@ export function Entourage() {
 
                 // Special handling for The Couple - display Bride and Groom side by side
                 if (category === "The Couple") {
-                   const groom = members.find(m => m.RoleTitle?.toLowerCase().includes('groom'))
-                  const bride = members.find(m => m.RoleTitle?.toLowerCase().includes('bride'))
+                   const groom = members.find(m => m.roleTitle?.toLowerCase().includes('groom'))
+                  const bride = members.find(m => m.roleTitle?.toLowerCase().includes('bride'))
                   
                   return (
                     <div key={category}>
@@ -496,8 +528,8 @@ export function Entourage() {
                   // Helper function to sort parents: father first, then mother
                   const sortParents = (members: EntourageMember[]) => {
                     return [...members].sort((a, b) => {
-                      const aIsFather = a.RoleTitle?.toLowerCase().includes('father') ?? false
-                      const bIsFather = b.RoleTitle?.toLowerCase().includes('father') ?? false
+                      const aIsFather = a.roleTitle?.toLowerCase().includes('father') ?? false
+                      const bIsFather = b.roleTitle?.toLowerCase().includes('father') ?? false
                       
                       // Father comes first
                       if (aIsFather && !bIsFather) return -1
@@ -548,7 +580,7 @@ export function Entourage() {
                               <TwoColumnLayout singleTitle="OFFICIATING MINISTER" centerContent={true}>
                                 {officiating.map((member, idx) => (
                                   <div
-                                    key={`officiating-${idx}-${member.Name}`}
+                                    key={`officiating-${idx}-${member.name}`}
                                     className="px-1.5 sm:px-2 md:px-2.5 min-[350px]:col-span-2 flex justify-center"
                                   >
                                     <NameItem member={member} align="center" showRole={false} />
@@ -568,13 +600,13 @@ export function Entourage() {
                               {sponsors.map((sponsor, idx) => (
                                 <React.Fragment key={`sponsor-row-${idx}`}>
                                   <div key={`sponsor-male-${idx}`} className="px-1.5 sm:px-2 md:px-2.5">
-                                    {sponsor.MalePrincipalSponsor ? (
+                                    {sponsor.malePrincipalSponsor ? (
                                       <NameItem 
                                         member={{
-                                          Name: sponsor.MalePrincipalSponsor,
-                                          RoleCategory: "",
-                                          RoleTitle: "",
-                                          Email: ""
+                                          name: sponsor.malePrincipalSponsor,
+                                          roleCategory: "",
+                                          roleTitle: "",
+                                          email: ""
                                         }} 
                                         align="right" 
                                         showRole={false}
@@ -584,13 +616,13 @@ export function Entourage() {
                                     )}
                                   </div>
                                   <div key={`sponsor-female-${idx}`} className="px-1.5 sm:px-2 md:px-2.5">
-                                    {sponsor.FemalePrincipalSponsor ? (
+                                    {sponsor.femalePrincipalSponsor ? (
                                       <NameItem 
                                         member={{
-                                          Name: sponsor.FemalePrincipalSponsor,
-                                          RoleCategory: "",
-                                          RoleTitle: "",
-                                          Email: ""
+                                          name: sponsor.femalePrincipalSponsor,
+                                          roleCategory: "",
+                                          roleTitle: "",
+                                          email: ""
                                         }} 
                                         align="left" 
                                         showRole={false}
@@ -810,7 +842,7 @@ export function Entourage() {
                             <div className="col-span-full">
                               <div className="max-w-sm mx-auto flex flex-col items-center gap-0.5 sm:gap-1 md:gap-1">
                                 {grpMembers.map((member, idx) => (
-                                  <NameItem key={`${groupName}-${idx}-${member.Name}`} member={member} align="center" />
+                                  <NameItem key={`${groupName}-${idx}-${member.name}`} member={member} align="center" />
                                 ))}
                               </div>
                             </div>
@@ -876,7 +908,7 @@ export function Entourage() {
                             <div className="col-span-full">
                               <div className="max-w-sm mx-auto flex flex-col items-center gap-1 sm:gap-1.5 md:gap-2">
                                 {members.map((member, idx) => (
-                                  <NameItem key={`${category}-${idx}-${member.Name}`} member={member} align="center" />
+                                  <NameItem key={`${category}-${idx}-${member.name}`} member={member} align="center" />
                                 ))}
                               </div>
                             </div>
@@ -924,7 +956,7 @@ export function Entourage() {
                             <div className="col-span-full">
                               <div className="max-w-sm mx-auto flex flex-col items-center gap-1 sm:gap-1.5 md:gap-2">
                                 {members.map((member, idx) => (
-                                  <NameItem key={`${category}-${idx}-${member.Name}`} member={member} align="center" />
+                                  <NameItem key={`${category}-${idx}-${member.name}`} member={member} align="center" />
                                 ))}
                               </div>
                             </div>

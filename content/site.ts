@@ -64,7 +64,7 @@ export const siteConfig = {
     map: "https://maps.app.goo.gl/befpHeDXyTpy72CZ8",
     date: "November 29, 2026",
     day: "Sunday",
-    time: "6:00 PM",
+    time: "5:30 PM",
     image: ["/Details/reception.png","/Details/reception1.png","/Details/reception2.png"],
   },
   dressCode: {
