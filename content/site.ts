@@ -16,7 +16,7 @@ export const siteConfig = {
     sponsors: "https://script.google.com/macros/s/AKfycbyX7ym2zphTllOUvkShfC8Y179lGTRr0oEb8WpR2NURI3BUo4swe_1oc8ptZ7rmdxcp/exec", //done
     weddingDetails: "https://script.google.com/macros/s/AKfycbzmMfQg6dkFIa_tc8hAlXddWa9G7xxqJd3ZR8e502gtJhzLtWTVEf-FY5i_MFZSm2OT/exec", //done
 ////google share 
-    googleShare: "https://drive.google.com/drive/folders/1Fzv_NcPx_TvPdpU5iHsfUXOd4-QwtdnQ?usp=sharing", 
+    googleShare: "https://drive.google.com/drive/folders/1Sncb739WYiTkTGyAbzgmLLNijqmr8eyf?usp=sharing", 
   },
   wedding: {
     date: "November 29, 2026",
